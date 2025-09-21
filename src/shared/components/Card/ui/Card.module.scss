@@ -1,0 +1,50 @@
+@use 'sass:color';
+
+.card-container {
+  display: grid;
+  grid-template-rows: 13fr 1fr 1fr 1fr;
+  border: 1px solid color.adjust($second-color, $alpha: -0.9);
+
+  &__image {
+    width: 85%;
+    height: auto;
+    user-select: none;
+    justify-self: center;
+  }
+
+  &__title,
+  &__category,
+  &__price {
+    justify-self: center;
+    @include font-family;
+    font-size: 1.2rem;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__category {
+    color: color.adjust($second-color, $alpha: -0.6);
+    font-weight: 500;
+  }
+
+  &__price {
+    font-weight: 900;
+    color: $third-color;
+  }
+
+  &__button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    gap: 10px;
+
+    & span {
+      @include font-family;
+      font-size: 0.8rem;
+    }
+  }
+}

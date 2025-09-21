@@ -1,0 +1,15 @@
+.autorize {
+  justify-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5vw;
+
+  span {
+    align-self: center;
+  }
+}
+
+.icon {
+  color: $third-color;
+  font-size: 1.2rem;
+}

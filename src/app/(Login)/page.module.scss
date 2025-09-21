@@ -1,0 +1,52 @@
+@use 'sass:color';
+
+.form-display {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 10vh;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  min-height: 50vh;
+
+  & * {
+    font-size: 1rem;
+    @include font-family;
+  }
+
+  & h2 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  & input,
+  button {
+    min-width: 20vw;
+    height: 35px;
+    border-radius: 7px;
+  }
+
+  & input {
+    outline: none;
+    border: 1px solid $login-base;
+    text-indent: 12px;
+    &::placeholder {
+      color: color.adjust($second-color, $alpha: -0.7);
+      font-weight: 500;
+    }
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20vw;
+}
+
+.error-message {
+  color: $third-color;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 2px;
+}

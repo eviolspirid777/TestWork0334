@@ -1,0 +1,13 @@
+.base {
+  background-color: $second-color;
+  color: $first-color;
+  border: none;
+  font-weight: 700;
+}
+
+.link {
+  color: $first-color;
+  text-decoration: underline;
+  background: none !important;
+  border: none !important;
+}

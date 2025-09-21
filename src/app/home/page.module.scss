@@ -1,0 +1,23 @@
+.home-page {
+  padding: 5vh 11%;
+
+  & h2 {
+    @include font-family;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 2vh 0 2vh 0;
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.loader {
+  display: flex;
+  height: 65vh;
+  align-self: center;
+  justify-self: center;
+}

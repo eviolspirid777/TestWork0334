@@ -1,0 +1,11 @@
+.footer-block {
+  height: 10vh;
+  background-color: $second-color;
+  color: $first-color;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  align-items: center;
+  padding-top: 3%;
+  @include font-family;
+}
