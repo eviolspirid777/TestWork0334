@@ -1,11 +1,13 @@
 import { FC, ReactNode } from 'react';
 
 import styles from './Button.module.scss';
+import { Loading } from '../../Loading/Loading';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
   htmlType?: 'button' | 'reset' | 'submit';
   buttonType?: 'link' | 'base';
+  loading: boolean;
   children?: ReactNode;
 };
 
@@ -23,6 +25,7 @@ export const Button: FC<ButtonProps> = ({
   buttonType = 'base',
   className,
   children,
+  loading,
   ...restProps
 }) => {
   return (
@@ -31,7 +34,13 @@ export const Button: FC<ButtonProps> = ({
       type={htmlType}
       {...restProps}
     >
-      {children}
+      {loading ? (
+        <div className={styles['loading']}>
+          <Loading color="white" />
+        </div>
+      ) : (
+        children
+      )}
     </button>
   );
 };

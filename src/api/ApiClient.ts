@@ -1,7 +1,7 @@
 import { LoginResponse } from '@/shared/types/api/responses/login/LoginResponse';
 import { FormSubmitDataType } from '@/shared/types/login/Form';
 import axios, { AxiosInstance } from 'axios';
-import { localStorageService } from '../shared/localStorage/localStorage';
+import { localStorageService } from '../shared/services/localStorage/localStorage';
 import { GetProductsRequestType } from '../shared/types/api/requests/products/GetProductsRequest';
 import { ProductsResponse } from '../shared/types/api/responses/products/ProductResponse';
 

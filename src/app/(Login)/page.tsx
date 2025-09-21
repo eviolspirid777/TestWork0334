@@ -9,9 +9,11 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import z from 'zod';
 import { useAuthStore } from '@/store/auth/useAuthStore';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import styles from './page.module.scss';
+import { AxiosError } from 'axios';
+import { ErrorProposal } from '@/shared/services/ErrorProposal/ErrorProposal';
 
 export const formSchema = z.object({
   username: z
@@ -25,6 +27,8 @@ export const formSchema = z.object({
 export type FormFields = z.infer<typeof formSchema>;
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const { setUser } = useAuthStore();
@@ -43,12 +47,17 @@ export default function Home() {
 
   const submitData = async (data: FormSubmitDataType) => {
     try {
+      setLoading(true);
       const responseData = await apiClient.login(data);
       setUser(responseData);
-      toast.success('Success!');
+      toast.success('Success login!');
       router.push('home');
-    } catch {
-      toast.error('Error!');
+    } catch (ex) {
+      if (ex instanceof AxiosError) {
+        toast.error(ErrorProposal(ex.status));
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,7 +93,7 @@ export default function Home() {
           )}
         </div>
 
-        <Button buttonType="base" htmlType="submit">
+        <Button buttonType="base" htmlType="submit" loading={loading}>
           Login
         </Button>
       </form>
