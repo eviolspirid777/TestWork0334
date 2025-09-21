@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { Loading } from '@/shared/components/Loading/Loading';
 
+//TODO: Можно использовать серверную компоненту с запросами async function Page. Но это может дать нагрузку на сервер
+
 export default function Page() {
   const { products, setProducts } = useProductsStore();
   const [loading, setLoading] = useState(false);
