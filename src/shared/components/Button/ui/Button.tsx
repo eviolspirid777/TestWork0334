@@ -1,13 +1,13 @@
 import { FC, ReactNode } from 'react';
+import { Loading } from '../../Loading/ui';
 
 import styles from './Button.module.scss';
-import { Loading } from '../../Loading/Loading';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
   htmlType?: 'button' | 'reset' | 'submit';
   buttonType?: 'link' | 'base';
-  loading: boolean;
+  loading?: boolean;
   children?: ReactNode;
 };
 

@@ -4,9 +4,9 @@ import { apiClient } from '@/api/ApiClient';
 import { Card } from '@/shared/components/Card/ui';
 import { useProductsStore } from '@/store/products/useProductsStore';
 import { useEffect, useState } from 'react';
+import { Loading } from '@/shared/components/Loading/ui';
 
 import styles from './page.module.scss';
-import { Loading } from '@/shared/components/Loading/Loading';
 
 //TODO: Можно использовать серверную компоненту с запросами async function Page. Но это может дать нагрузку на сервер
 

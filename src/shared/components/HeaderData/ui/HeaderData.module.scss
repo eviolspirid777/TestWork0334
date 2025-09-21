@@ -1,0 +1,10 @@
+.header-data {
+  justify-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+
+  span {
+    align-self: center;
+  }
+}

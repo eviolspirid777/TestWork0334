@@ -15,19 +15,6 @@
       display: flex;
       flex-flow: row nowrap;
       gap: 20px;
-
-      &__telephone,
-      &__email,
-      &__address {
-        justify-self: center;
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 0.5vw;
-
-        span {
-          align-self: center;
-        }
-      }
     }
   }
   &__logo {

@@ -3,6 +3,7 @@ import { BsFillGeoAltFill } from 'react-icons/bs';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoMdMail } from 'react-icons/io';
 import { AutorizeButton } from '../(AuthorizeButton)/AuthorizeButton';
+import { HeaderData } from '@/shared/components/HeaderData/ui';
 
 const categories = [
   'Home',
@@ -19,26 +20,18 @@ export const Header = () => {
     <div className={styles['header-block']}>
       <div className={styles['header-block__references']}>
         <div className={styles['header-block__references__information']}>
-          <div
-            className={
-              styles['header-block__references__information__telephone']
-            }
-          >
-            <FaPhoneAlt className={styles.icon} />
-            <span>+021-95-51-84</span>
-          </div>
-          <div
-            className={styles['header-block__references__information__email']}
-          >
-            <IoMdMail className={styles.icon} />
-            <span>shop@abelohost@.com</span>
-          </div>
-          <div
-            className={styles['header-block__references__information__address']}
-          >
-            <BsFillGeoAltFill className={styles.icon} />
-            <span>1734 Stonecoal Road</span>
-          </div>
+          <HeaderData
+            icon={<FaPhoneAlt className={styles.icon} />}
+            text="+021-95-51-84"
+          />
+          <HeaderData
+            icon={<IoMdMail className={styles.icon} />}
+            text="shop@abelohost@.com"
+          />
+          <HeaderData
+            icon={<BsFillGeoAltFill className={styles.icon} />}
+            text="1734 Stonecoal Road"
+          />
         </div>
         <AutorizeButton />
       </div>
