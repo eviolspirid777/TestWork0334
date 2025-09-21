@@ -39,6 +39,19 @@ class ApiClient {
     return response.data;
   }
 
+  async validateUser() {
+    const accessToken = localStorageService.getAccessToken();
+    if (accessToken) {
+      const response = await this.apiClient.get<LoginResponse>('auth/me', {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      return response.data;
+    }
+    throw new Error('Invalid accessToken!');
+  }
+
   async getProducts(data: GetProductsRequestType) {
     const response = await this.apiClient.get<ProductsResponse>('products', {
       params: data,
