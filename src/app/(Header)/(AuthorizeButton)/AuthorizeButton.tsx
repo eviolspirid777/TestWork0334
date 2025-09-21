@@ -9,12 +9,13 @@ import { apiClient } from '@/api/ApiClient';
 import { Loading } from '@/shared/components/Loading/ui';
 
 import styles from './AuthorizeButton.module.scss';
+import { RouterType } from '@/shared/types/router/router';
 
 export const AutorizeButton = () => {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() as RouterType;
 
   const { user, setUser } = useAuthStore();
 
@@ -29,7 +30,7 @@ export const AutorizeButton = () => {
     }
   }, []);
 
-  const handleNavigate = (path: '/home' | '/') => {
+  const handleNavigate = (path: RouterType) => {
     router.push(path);
   };
 

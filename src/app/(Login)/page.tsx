@@ -92,7 +92,6 @@ export default function Home() {
             </span>
           )}
         </div>
-
         <Button buttonType="base" htmlType="submit" loading={loading}>
           Login
         </Button>
