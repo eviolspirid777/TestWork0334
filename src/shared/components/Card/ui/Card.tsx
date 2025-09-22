@@ -9,13 +9,14 @@ import styles from './Card.module.scss';
 
 type CardProps = {
   product: Product;
+  isMobile: boolean;
 };
 
-export const Card: FC<CardProps> = ({ product }) => {
+export const Card: FC<CardProps> = ({ product, isMobile }) => {
   const { user } = useAuthStore();
 
   return (
-    <div className={styles['card-container']}>
+    <div className={`${styles['card-container']} ${isMobile && styles.mobile}`}>
       <Image
         className={styles['card-container__image']}
         src={product.images[0]}

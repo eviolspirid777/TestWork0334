@@ -50,3 +50,24 @@
   font-weight: 500;
   margin-top: 2px;
 }
+
+.mobile {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  margin-bottom: 5vh;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+
+  & h2 {
+    text-align: center;
+  }
+
+  & input,
+  button {
+    min-width: 50vw;
+    height: 35px;
+    border-radius: 7px;
+  }
+}

@@ -7,12 +7,17 @@ import { useEffect, useState } from 'react';
 import { Loading } from '@/shared/components/Loading/ui';
 
 import styles from './page.module.scss';
+import { useMediaQuery } from 'react-responsive';
 
 //TODO: Можно использовать серверную компоненту с запросами async function Page. Но это может дать нагрузку на сервер
 
 export default function Page() {
   const { products, setProducts } = useProductsStore();
   const [loading, setLoading] = useState(false);
+
+  const isMobile = useMediaQuery({
+    maxWidth: 767,
+  });
 
   useEffect(() => {
     (async () => {
@@ -37,9 +42,11 @@ export default function Page() {
   return (
     <div className={styles['home-page']}>
       <h2>Latest Products</h2>
-      <div className={styles['home-page__products']}>
+      <div
+        className={`${styles['home-page__products']} ${isMobile && styles.mobile}`}
+      >
         {products?.map((product) => (
-          <Card key={product.id} product={product} />
+          <Card key={product.id} product={product} isMobile={isMobile} />
         ))}
       </div>
     </div>

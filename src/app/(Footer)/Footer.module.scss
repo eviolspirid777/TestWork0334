@@ -6,6 +6,20 @@
   flex-flow: column nowrap;
   gap: 20px;
   align-items: center;
-  padding-top: 3%;
+  padding: 3% 0;
   @include font-family;
+}
+
+.logged-in {
+  height: 10vh;
+}
+
+.not-logged-in {
+  height: 5vh;
+}
+
+.mobile {
+  padding: 5vh 0;
+  height: fit-content;
+  text-align: center;
 }

@@ -13,3 +13,10 @@
   color: $third-color;
   font-size: 1.2rem;
 }
+
+.mobile {
+  margin-bottom: 1.4vh;
+  & span {
+    color: $first-color;
+  }
+}

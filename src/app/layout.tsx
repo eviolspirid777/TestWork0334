@@ -1,4 +1,5 @@
 import '@/shared/styles/reset.scss';
+import '@/shared/styles/styles.scss';
 
 import { Toaster } from 'react-hot-toast';
 import { Header } from './(Header)/(ui)/Header';

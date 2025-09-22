@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { AxiosError } from 'axios';
 import { ErrorProposal } from '@/shared/services/ErrorProposal/ErrorProposal';
+import { useMediaQuery } from 'react-responsive';
 
 export const formSchema = z.object({
   username: z
@@ -32,6 +33,10 @@ export default function Home() {
   const router = useRouter();
 
   const { setUser } = useAuthStore();
+
+  const isMobile = useMediaQuery({
+    maxWidth: 767,
+  });
 
   useEffect(() => {
     setUser(null);
@@ -64,7 +69,7 @@ export default function Home() {
   return (
     <>
       <form
-        className={styles['form-display']}
+        className={`${styles['form-display']} ${isMobile && styles['mobile']}`}
         onSubmit={form.handleSubmit((data) => submitData(data))}
       >
         <h2>Login</h2>

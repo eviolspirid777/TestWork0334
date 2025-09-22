@@ -48,3 +48,25 @@
     }
   }
 }
+
+.mobile {
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  max-height: 200px;
+
+  & .card-container__title,
+  & .card-container__category,
+  & .card-container__price {
+    justify-self: center;
+    @include font-family;
+    font-size: 0.7rem;
+  }
+
+  & .card-container__title {
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  & .card-container__price {
+    font-size: 0.9rem;
+  }
+}

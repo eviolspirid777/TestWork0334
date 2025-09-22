@@ -1,9 +1,8 @@
-import styles from './Header.module.scss';
-import { BsFillGeoAltFill } from 'react-icons/bs';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { IoMdMail } from 'react-icons/io';
-import { AutorizeButton } from '../(AuthorizeButton)/AuthorizeButton';
-import { HeaderData } from '@/shared/components/HeaderData/ui';
+'use client';
+
+import { useMediaQuery } from 'react-responsive';
+import { Desktop } from './(Desktop)/Desktop';
+import { Mobile } from './(Mobile)/Mobile';
 
 const categories = [
   'Home',
@@ -16,33 +15,13 @@ const categories = [
 ];
 
 export const Header = () => {
-  return (
-    <div className={styles['header-block']}>
-      <div className={styles['header-block__references']}>
-        <div className={styles['header-block__references__information']}>
-          <HeaderData
-            icon={<FaPhoneAlt className={styles.icon} />}
-            text="+021-95-51-84"
-          />
-          <HeaderData
-            icon={<IoMdMail className={styles.icon} />}
-            text="shop@abelohost@.com"
-          />
-          <HeaderData
-            icon={<BsFillGeoAltFill className={styles.icon} />}
-            text="1734 Stonecoal Road"
-          />
-        </div>
-        <AutorizeButton />
-      </div>
-      <div className={styles['header-block__logo']} data-end-content=".">
-        Abelohost Shop
-      </div>
-      <div className={styles['header-block__categories']}>
-        {categories.map((category, key) => (
-          <span key={key}>{category}</span>
-        ))}
-      </div>
-    </div>
+  const isMobile = useMediaQuery({
+    maxWidth: 767,
+  });
+
+  return isMobile ? (
+    <Mobile categories={categories} />
+  ) : (
+    <Desktop categories={categories} />
   );
 };
