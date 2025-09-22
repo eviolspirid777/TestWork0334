@@ -3,9 +3,10 @@
 
   & h2 {
     @include font-family;
+
     font-size: 1.7rem;
     font-weight: 700;
-    margin: 2vh 0 2vh 0;
+    margin: 2vh 0;
   }
 
   &__products {
@@ -18,8 +19,7 @@
 .loader {
   display: flex;
   height: 65vh;
-  align-self: center;
-  justify-self: center;
+  place-self: center center;
 }
 
 .mobile {
@@ -28,7 +28,7 @@
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .home-page {
     padding: 4vh 6%;
 
@@ -40,7 +40,7 @@
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .home-page {
     padding: 3vh 5%;
 

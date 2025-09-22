@@ -21,13 +21,15 @@
   &__category,
   &__price {
     justify-self: center;
+
     @include font-family;
+
     font-size: 1.2rem;
   }
 
   &__title {
     font-weight: 700;
-    padding: 8px 12px 0 12px;
+    padding: 8px 12px 0;
     text-align: center;
   }
 
@@ -40,7 +42,7 @@
   &__price {
     font-weight: 900;
     color: $third-color;
-    padding: 8px 12px 12px 12px;
+    padding: 8px 12px 12px;
   }
 
   &__button {
@@ -50,17 +52,18 @@
     justify-content: center;
     height: 40px;
     gap: 10px;
-    margin: 0 12px 12px 12px;
+    margin: 0 12px 12px;
 
     & span {
       @include font-family;
+
       font-size: 0.8rem;
     }
   }
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .card-container {
     &__title,
     &__category,
@@ -71,7 +74,7 @@
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .card-container {
     &__image {
       aspect-ratio: 1 / 1;

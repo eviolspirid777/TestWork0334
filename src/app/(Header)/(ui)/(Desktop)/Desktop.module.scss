@@ -3,13 +3,16 @@
 .header-block {
   display: flex;
   flex-flow: column;
+
   &__references {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 1% 0%;
     background-color: $second-color-lighter;
     color: $first-color;
+
     @include font-family;
+
     &__information {
       justify-self: center;
       display: flex;
@@ -17,13 +20,16 @@
       gap: 20px;
     }
   }
+
   &__logo {
     font-size: 4rem;
     background-color: $second-color;
     color: $first-color;
     padding: 2.5% 11%;
     border-bottom: 3px solid $third-color;
+
     @include font-family;
+
     font-weight: 700;
 
     &::after {
@@ -32,6 +38,7 @@
       font-size: 4rem;
     }
   }
+
   &__categories {
     padding: 1.4% 11%;
     display: flex;
@@ -40,6 +47,7 @@
     border-bottom: 2px solid color.adjust($second-color, $alpha: -0.9);
 
     @include font-family;
+
     font-size: 1rem;
     font-weight: 500;
   }

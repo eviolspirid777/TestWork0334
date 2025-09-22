@@ -36,7 +36,7 @@ export const AuthorizeBlock: FC<AuthorizeBlockProps> = ({ onAuthorize }) => {
           setLoading(true);
           const data = await apiClient.validateUser();
           setUser(data);
-        } catch (ex) {
+        } catch {
           toast.error('Error when invalidate user!');
         } finally {
           setLoading(false);
