@@ -11,7 +11,7 @@
   &__products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
   }
 }
 
@@ -25,4 +25,33 @@
 .mobile {
   grid-template-columns: repeat(2, 1fr);
   min-height: 60vh;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-page {
+    padding: 4vh 6%;
+
+    &__products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .home-page {
+    padding: 3vh 5%;
+
+    & h2 {
+      font-size: 1.4rem;
+      margin: 1.5vh 0;
+    }
+
+    &__products {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
 }

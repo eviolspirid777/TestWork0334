@@ -2,12 +2,17 @@
 
 .card-container {
   display: grid;
-  grid-template-rows: 13fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-rows: min-content;
   border: 1px solid color.adjust($second-color, $alpha: -0.9);
+  border-radius: 8px;
+  overflow: hidden;
+  background: $first-color;
 
   &__image {
-    width: 85%;
-    height: auto;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     user-select: none;
     justify-self: center;
   }
@@ -22,16 +27,20 @@
 
   &__title {
     font-weight: 700;
+    padding: 8px 12px 0 12px;
+    text-align: center;
   }
 
   &__category {
     color: color.adjust($second-color, $alpha: -0.6);
     font-weight: 500;
+    padding: 0 12px;
   }
 
   &__price {
     font-weight: 900;
     color: $third-color;
+    padding: 8px 12px 12px 12px;
   }
 
   &__button {
@@ -41,6 +50,7 @@
     justify-content: center;
     height: 40px;
     gap: 10px;
+    margin: 0 12px 12px 12px;
 
     & span {
       @include font-family;
@@ -49,24 +59,32 @@
   }
 }
 
-.mobile {
-  grid-template-rows: 2fr 1fr 1fr 1fr;
-  max-height: 200px;
-
-  & .card-container__title,
-  & .card-container__category,
-  & .card-container__price {
-    justify-self: center;
-    @include font-family;
-    font-size: 0.7rem;
+/* Tablet */
+@media (max-width: 1024px) {
+  .card-container {
+    &__title,
+    &__category,
+    &__price {
+      font-size: 1rem;
+    }
   }
+}
 
-  & .card-container__title {
-    margin-top: 1vh;
-    text-align: center;
-  }
+/* Mobile */
+@media (max-width: 767px) {
+  .card-container {
+    &__image {
+      aspect-ratio: 1 / 1;
+    }
 
-  & .card-container__price {
-    font-size: 0.9rem;
+    &__title,
+    &__category,
+    &__price {
+      font-size: 0.9rem;
+    }
+
+    &__price {
+      font-size: 1rem;
+    }
   }
 }
