@@ -42,14 +42,17 @@
   &__categories {
     padding: 1.4% 11%;
     border-bottom: 2px solid color.adjust($second-color, $alpha: -0.9);
+
     & ul {
       display: flex;
       flex-flow: row nowrap;
       gap: 30px;
 
       @include font-family;
+
       font-size: 1rem;
       font-weight: 500;
+
       li {
         text-decoration: none;
       }
