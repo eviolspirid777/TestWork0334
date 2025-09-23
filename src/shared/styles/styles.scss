@@ -1,5 +1,21 @@
 @use 'sass:color';
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: block;
+  flex: 1;
+}
+
 #menu__toggle {
   opacity: 0;
 }
