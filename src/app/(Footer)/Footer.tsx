@@ -7,9 +7,11 @@ export const Footer = () => {
   const date = new Date().getFullYear().toFixed();
 
   return (
-    <div className={styles['footer-block']}>
-      <span>{date}</span>
+    <footer className={styles['footer-block']}>
+      <span>
+        <time dateTime={date}>{date}</time>
+      </span>
       <LoggedAs />
-    </div>
+    </footer>
   );
 };

@@ -67,32 +67,38 @@ export default function Home() {
   };
 
   return (
-    <>
+    <section aria-labelledby="login-title">
       <form
         className={`${styles['form-display']} ${isMobile && styles['mobile']}`}
         onSubmit={form.handleSubmit((data) => submitData(data))}
       >
-        <h2>Login</h2>
+        <h2 id="login-title">Login</h2>
         <div className={styles['input-group']}>
+          <label htmlFor="username">Username</label>
           <input
+            id="username"
             type="text"
+            autoComplete="username"
             placeholder="Username"
             {...form.register('username')}
           />
           {form.formState.errors.username && (
-            <span className={styles['error-message']}>
+            <span className={styles['error-message']} role="alert">
               {form.formState.errors.username.message}
             </span>
           )}
         </div>
         <div className={styles['input-group']}>
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
+            autoComplete="current-password"
             placeholder="Password"
             {...form.register('password')}
           />
           {form.formState.errors.password && (
-            <span className={styles['error-message']}>
+            <span className={styles['error-message']} role="alert">
               {form.formState.errors.password.message}
             </span>
           )}
@@ -101,6 +107,6 @@ export default function Home() {
           Login
         </Button>
       </form>
-    </>
+    </section>
   );
 }

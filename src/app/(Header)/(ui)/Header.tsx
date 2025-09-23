@@ -21,7 +21,7 @@ export const Header = () => {
   });
 
   return (
-    <>
+    <header>
       <Toaster
         position="bottom-right"
         toastOptions={{
@@ -38,6 +38,6 @@ export const Header = () => {
       ) : (
         <Desktop categories={categories} />
       )}
-    </>
+    </header>
   );
 };

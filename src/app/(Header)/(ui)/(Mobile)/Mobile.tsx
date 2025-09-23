@@ -13,24 +13,36 @@ export const Mobile: FC<MobileProps> = ({ categories }) => {
   };
 
   return (
-    <div className="hamburger-menu">
-      <input ref={burgerMenuRef} id="menu__toggle" type="checkbox" />
-      <label className="menu__btn" htmlFor="menu__toggle">
+    <nav className="hamburger-menu" aria-label="Main navigation">
+      <input
+        ref={burgerMenuRef}
+        id="menu__toggle"
+        type="checkbox"
+        aria-hidden="true"
+      />
+      <label
+        className="menu__btn"
+        htmlFor="menu__toggle"
+        aria-controls="menu__list"
+        aria-expanded={false}
+      >
         <span></span>
       </label>
-      <ul className="menu__box">
-        <li>
+      <ul id="menu__list" className="menu__box" role="menu">
+        <li role="none">
           <h2 className="menu__item">Abelohost Shop</h2>
         </li>
-        <li>
+        <li role="none">
           <AuthorizeBlock onAuthorize={handleOnAuthorize} />
         </li>
         {categories.map((category) => (
-          <li key={category}>
-            <a className="menu__item">{category}</a>
+          <li key={category} role="none">
+            <a className="menu__item" role="menuitem" href="#">
+              {category}
+            </a>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };

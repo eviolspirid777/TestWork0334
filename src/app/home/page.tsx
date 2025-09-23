@@ -40,15 +40,17 @@ export default function Page() {
   }
 
   return (
-    <div className={styles['home-page']}>
+    <section className={styles['home-page']} aria-labelledby="home-title">
       <h2>Latest Products</h2>
-      <div
+      <ul
         className={`${styles['home-page__products']} ${isMobile && styles.mobile}`}
       >
         {products?.map((product) => (
-          <Card key={product.id} product={product} isMobile={isMobile} />
+          <li key={product.id}>
+            <Card product={product} isMobile={isMobile} />
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

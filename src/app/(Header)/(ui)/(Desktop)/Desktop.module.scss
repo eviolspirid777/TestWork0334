@@ -33,7 +33,7 @@
     font-weight: 700;
 
     &::after {
-      content: attr(data-end-content);
+      content: '.';
       color: $third-color;
       font-size: 4rem;
     }
@@ -41,15 +41,19 @@
 
   &__categories {
     padding: 1.4% 11%;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 30px;
     border-bottom: 2px solid color.adjust($second-color, $alpha: -0.9);
+    & ul {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 30px;
 
-    @include font-family;
-
-    font-size: 1rem;
-    font-weight: 500;
+      @include font-family;
+      font-size: 1rem;
+      font-weight: 500;
+      li {
+        text-decoration: none;
+      }
+    }
   }
 }
 

@@ -15,7 +15,7 @@ export const Desktop: FC<DesktopProps> = ({ categories }) => {
   return (
     <div className={styles['header-block']}>
       <div className={styles['header-block__references']}>
-        <div className={styles['header-block__references__information']}>
+        <address className={styles['header-block__references__information']}>
           <HeaderData
             icon={<FaPhoneAlt className={styles.icon} />}
             text="+021-95-51-84"
@@ -28,17 +28,22 @@ export const Desktop: FC<DesktopProps> = ({ categories }) => {
             icon={<BsFillGeoAltFill className={styles.icon} />}
             text="1734 Stonecoal Road"
           />
-        </div>
+        </address>
         <AuthorizeBlock />
       </div>
-      <div className={styles['header-block__logo']} data-end-content=".">
-        Abelohost Shop
-      </div>
-      <div className={styles['header-block__categories']}>
-        {categories.map((category, key) => (
-          <span key={key}>{category}</span>
-        ))}
-      </div>
+      <div className={styles['header-block__logo']}>Abelohost Shop</div>
+      <nav
+        className={styles['header-block__categories']}
+        aria-label="Main navigation"
+      >
+        <ul>
+          {categories.map((category) => (
+            <li key={category}>
+              <a role="link">{category}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };
